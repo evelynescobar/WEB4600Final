@@ -1,0 +1,1 @@
+The guest speaker talked about common enterprise data platforms. The spectrum scale foundations. We talked about RAIDs and snapshots. He also talked about the competitions in the FS environment. 

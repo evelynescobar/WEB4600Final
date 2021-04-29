@@ -1,0 +1,276 @@
+<link href="https://fonts.googleapis.com/css?family=Russo+One" rel="stylesheet">
+
+<svg viewBox="0 0 1320 300">
+  <text x="50%" y="-170%" dy=".35em" text-anchor="middle">
+    InSync Jewelry
+  </text>
+</svg>  
+
+<div class="login-box">
+  
+  <form>
+    <div id="display-1">
+      <h2>Login</h2>
+    <div class="user-box">
+      <input type="text" name="" required="">
+      <label>Username</label>
+    </div>
+    <div class="user-box">
+      <input type="password" name="" required="">
+      <label>Password</label>
+    </div>
+    <a class="submit" href="index.html">
+      <span></span>
+      <span></span>
+      <span></span>
+      <span></span>
+      Submit
+    </a>
+    <h6 style="color:#fff; text-transform: none;"><a id="signUpForm">Don't have an account? Sign-up here!</a></h6>
+        </div>
+
+
+    <div id="hidden-1">
+       <h2>Sign Up</h2>
+        <div class="user-box">
+      <input type="text" name="" required="">
+      <label>Device ID</label>
+    </div>
+        <div class="user-box">
+      <input type="text" name="" required="">
+      <label>Username</label>
+    </div>
+    <div class="user-box">
+      <input type="password" name="" required="">
+      <label>Password</label>
+    </div>
+    <a class="submit" href="buffer.html">
+      <span></span>
+      <span></span>
+      <span></span>
+      <span></span>
+      get started
+    </a>
+    </div>
+  </form>
+</div>
+
+<style>
+  html {
+  height: 100%;
+}
+body {
+  margin:0;
+  padding:0;
+  font-family: 'Russo One', sans-serif;
+  background: linear-gradient(#141e30, #243b55);
+}
+
+a{
+    cursor: pointer;
+}
+
+.login-box {
+  position: absolute;
+  top: 55%;
+  left: 50%;
+  width: 400px;
+  padding: 60px;
+  transform: translate(-50%, -50%);
+  background: rgba(0,0,0,.5);
+  box-sizing: border-box;
+  box-shadow: 0 15px 25px rgba(0,0,0,.6);
+  border-radius: 10px;
+}
+
+.login-box h2 {
+  margin: 0 0 30px;
+  padding: 0;
+  color: #fff;
+  text-align: center;
+  text-transform: uppercase;
+}
+
+.login-box .user-box {
+  position: relative;
+}
+
+.login-box .user-box input {
+  width: 100%;
+  padding: 10px 0;
+  font-size: 16px;
+  color: #fff;
+  margin-bottom: 30px;
+  border: none;
+  border-bottom: 1px solid #fff;
+  outline: none;
+  background: transparent;
+}
+.login-box .user-box label {
+  position: absolute;
+  top:0;
+  left: 0;
+  padding: 10px 0;
+  font-size: 16px;
+  color: #fff;
+  pointer-events: none;
+  transition: .5s;
+  text-transform: uppercase;
+}
+
+.login-box .user-box input:focus ~ label,
+.login-box .user-box input:valid ~ label {
+  top: -20px;
+  left: 0;
+  color: #488acc;
+  opacity: 1;
+  font-size: 12px;
+}
+
+.login-box form .submit {
+  position: relative;
+  display: inline-block;
+  padding: 10px 20px;
+  color: #488acc;
+  opacity: 1;
+  font-size: 16px;
+  text-decoration: none;
+  text-transform: uppercase;
+  overflow: hidden;
+  transition: .5s;
+  margin-top: 40px;
+  letter-spacing: 4px
+}
+
+
+.login-box .submit span {
+  position: absolute;
+  display: block;
+}
+
+.login-box .submit span:nth-child(1) {
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 2px;
+  background: linear-gradient(90deg, transparent, #488acc);
+  animation: btn-anim1 1s linear infinite;
+}
+
+@keyframes btn-anim1 {
+  0% {
+    left: -100%;
+  }
+  50%,100% {
+    left: 100%;
+  }
+}
+
+.login-box .submit span:nth-child(2) {
+  top: -100%;
+  right: 0;
+  width: 2px;
+  height: 100%;
+  background: linear-gradient(180deg, transparent, #488acc);
+  animation: btn-anim2 1s linear infinite;
+  animation-delay: .25s
+}
+
+@keyframes btn-anim2 {
+  0% {
+    top: -100%;
+  }
+  50%,100% {
+    top: 100%;
+  }
+}
+
+.login-box .submit span:nth-child(3) {
+  bottom: 0;
+  right: -100%;
+  width: 100%;
+  height: 2px;
+  background: linear-gradient(270deg, transparent, #488acc);
+  animation: btn-anim3 1s linear infinite;
+  animation-delay: .5s
+}
+
+@keyframes btn-anim3 {
+  0% {
+    right: -100%;
+  }
+  50%,100% {
+    right: 100%;
+  }
+}
+
+.login-box .submit span:nth-child(4) {
+  bottom: -100%;
+  left: 0;
+  width: 2px;
+  height: 100%;
+  background: linear-gradient(360deg, transparent, #488acc);
+  animation: btn-anim4 1s linear infinite;
+  animation-delay: .75s
+}
+
+@keyframes btn-anim4 {
+  0% {
+    bottom: -100%;
+  }
+  50%,100% {
+    bottom: 100%;
+  }
+}
+
+@media screen and (max-width: 800px) {
+  .login-box {
+
+    width: 80%;
+    height: 60%;
+  }
+}
+
+svg {
+  font-family: 'Russo One', sans-serif;
+  position: absolute; 
+  width: 100%; height: 100%;
+}
+svg text {
+  text-transform: uppercase;
+  animation: stroke 5s infinite alternate;
+  stroke-width: 2;
+  stroke: #365fa0;
+  font-size: 140px;
+}
+@keyframes stroke {
+  0%   {
+    fill: rgba(72,138,20,0); stroke: rgba(54,95,160,1);
+    stroke-dashoffset: 25%; stroke-dasharray: 0 50%; stroke-width: 2;
+  }
+  70%  {fill: rgba(72,138,20,0); stroke: rgba(54,95,160,1); }
+  80%  {fill: rgba(72,138,20,0); stroke: rgba(54,95,160,1); stroke-width: 3; }
+  100% {
+    fill: rgba(72,138,204,1); stroke: rgba(54,95,160,0); 
+    stroke-dashoffset: -25%; stroke-dasharray: 50% 0; stroke-width: 0;
+  }
+}
+
+
+#hidden {
+    display:none;
+}
+#hidden-1 {
+    display:none;
+}
+
+</style>
+<script>
+    var signUpForm = document.getElementById("signUpForm");
+                signUpForm.onclick = function () {
+                    var signUpFormView = document.getElementById("hidden-1");
+                    var signInFormView = document.getElementById("display-1");
+                        signUpFormView.style.display="block";
+                    signInFormView.style.display="none";
+                };
+</script>

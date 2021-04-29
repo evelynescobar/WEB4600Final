@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+  <body>
+    <p>
+      <button id="connect">Connect</button>
+    </p>
+
+    <p>
+      <input type="color" id="color">
+      <button id="send">Send</button>
+    </p>
+
+    <script src="script.js"></script>
+  </body>
+</html>
+
+<script>
+  let serviceId        = parseInt('0x0000dfb0');
+let characteristicId = parseInt('0x0000dfb1');
+
+let blunoCharacteristic = null;
+
+document.querySelector("#connect").onclick = function () {
+  navigator.bluetooth.requestDevice({
+    filters: [{ services: [serviceId] }]
+  }).then(device => {
+    return device.gatt.connect();
+  }).then(server => {
+    return server.getPrimaryService(serviceId);
+  }).then(service => {
+    return service.getCharacteristic(characteristicId);
+  }).then(characteristic => {
+    blunoCharacteristic = characteristic;
+  });
+};
+
+document.querySelector("#send").onclick = function () {
+  if (!blunoCharacteristic) {
+    alert("Connect first!");
+    return;
+  }
+
+  let hexString = document.querySelector("#color").value;
+  let hexBytes = hexString.match(/[A-Za-z0-9]{2}/g);
+  let bytes = hexBytes.map(b => parseInt(b, 16));
+  blunoCharacteristic.writeValue(new Uint8Array(bytes));
+};
+</script>
